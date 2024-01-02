@@ -356,11 +356,11 @@ h6,
 
 
 /*** Team ***/
-.team-item .team-text {
+team-item .team-text {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    bottom: 0;
+    width: 215px;
+    height: 229px;
+    bottom: -63px;
     right: 0;
     display: flex;
     align-items: center;
@@ -371,6 +371,7 @@ h6,
     border-radius: 250px;
     transition: .5s;
 }
+
 
 .team-item:hover .team-text {
     border-color: var(--primary);
