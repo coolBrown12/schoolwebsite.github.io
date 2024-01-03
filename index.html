@@ -304,7 +304,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">School Classes</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    <p>From arts and crafts to science and math, our classes provide a well-rounded education that prepares children for their future academic journey.</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -324,7 +324,10 @@
                                     <div class="col-4">
                                         <div class="border-top border-3 border-success pt-2">
                                             <h6 class="text-success mb-1">Time:</h6>
-                                            <small>9:30 am - 12:30 pm</small>
+                                            <small id="flexible-time1" class="blink">Flexiable Time</small>
+                                            <div>
+                                                <small id="flexible-time1" class="animate__animated animate__flash">9:30 am - 12:30 pm</small>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -356,7 +359,10 @@
                                     <div class="col-4">
                                         <div class="border-top border-3 border-success pt-2">
                                             <h6 class="text-success mb-1">Time:</h6>
-                                            <small>8 AM-8 PM</small>
+                                            <small id="flexible-time1" class="blink">Flexiable Time</small>
+                                            <div>
+                                                <small id="flexible-time1" class="animate__animated animate__flash">8am - 8pm</small>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -386,7 +392,10 @@
                                     <div class="col-4">
                                         <div class="border-top border-3 border-success pt-2">
                                             <h6 class="text-success mb-1">Time:</h6>
-                                            <small>9:30 am - 12:30 pm</small>
+                                            <small id="flexible-time1" class="blink">Flexiable Time</small>
+                                            <div>
+                                                <small id="flexible-time1" class="animate__animated animate__flash">9:30 am - 12:30 pm</small>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -417,7 +426,10 @@
                                     <div class="col-4">
                                         <div class="border-top border-3 border-success pt-2">
                                             <h6 class="text-success mb-1">Time:</h6>
-                                            <small>9:30 am - 12:30 pm</small>
+                                            <small id="flexible-time1" class="blink">Flexiable Time</small>
+                                    <div>
+                                        <small id="flexible-time1" class="animate__animated animate__flash">9:30 am - 12:30 pm</small>
+                                    </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -447,7 +459,10 @@
                                     <div class="col-4">
                                         <div class="border-top border-3 border-success pt-2">
                                             <h6 class="text-success mb-1">Time:</h6>
-                                            <small>9:30 am - 12:30 pm</small>
+                                            <small id="flexible-time1" class="blink">Flexiable Time</small>
+                                            <div>
+                                                <small id="flexible-time1" class="animate__animated animate__flash">9:30 am - 12:30 pm</small>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -477,7 +492,10 @@
                                     <div class="col-4">
                                         <div class="border-top border-3 border-success pt-2">
                                             <h6 class="text-success mb-1">Time:</h6>
-                                            <small>9:30 am - 12:30 pm</small>
+                                            <small id="flexible-time1" class="blink">Flexiable Time</small>
+                                    <div>
+                                        <small id="flexible-time1" class="animate__animated animate__flash">9:30 am - 12:30 pm</small>
+                                    </div>
                                         </div>
                                     </div>
                                     <div class="col-4">
@@ -493,6 +511,49 @@
                 </div>
             </div>
         </div>
+        <style>
+            @keyframes blink {
+                0% {opacity: 1;}
+                50% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+            .blink {
+        animation: blink 3s linear infinite;
+        color: red;
+        font-weight: bolder;
+        border: 2px solid #4d4d4d; /* dark gray border */
+        border-radius: 54%;
+        padding: 5px;
+        background-color: #333; /* dark background color */
+    }
+        </style>
+        
+        <script>
+            // Use JavaScript to update the flexible time text dynamically
+            var flexibleTimes = document.querySelectorAll('.flexible-time');
+        
+            function updateFlexibleTimeText() {
+                // Replace this with your dynamic logic to determine the flexible time text
+                var dynamicText = calculateFlexibleText(); // Implement your logic here
+        
+                flexibleTimes.forEach(function (element) {
+                    element.textContent = dynamicText;
+                });
+            }
+        
+            // Apply the blinking effect
+            flexibleTimes.forEach(function (element) {
+                element.classList.add('blink');
+            });
+        
+            // Initial update
+            updateFlexibleTimeText();
+        
+            function calculateFlexibleText() {
+                // Replace this with your logic to determine the flexible time text
+                return "Flexible Time";
+            }
+        </script>
         <!-- Classes End -->
 
 
@@ -734,7 +795,14 @@
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="https://wa.me/9897086434" class="btn btn-lg btn-primary btn-lg-square back-to-top" onclick="openWhatsApp(event)"><i class="bi bi-whatsapp"></i></a>
+
+        <script>
+            function openWhatsApp(event) {
+                event.preventDefault();
+                window.open('https://wa.me/9897086434', '_blank');
+            }
+        </script>
     </div>
 
     <!-- JavaScript Libraries -->
