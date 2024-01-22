@@ -691,24 +691,32 @@
     };
 
     function sendMessage() {
-        var input = document.getElementById('chatInput');
-        var content = document.getElementById('chatContent');
+    var input = document.getElementById('chatInput').value;
+    var message = encodeURIComponent(input);
 
-        // Create a new div for the message
-        var message = document.createElement('div');
-        message.textContent = input.value;
-        message.style.backgroundColor = '#25d366';
-        message.style.color = '#fff';
-        message.style.padding = '10px';
-        message.style.marginBottom = '10px';
-        message.style.borderRadius = '5px';
+    // Replace the following number with the actual WhatsApp number
+    var whatsappNumber = '9849064256';
 
-        // Add the message to the chat content
-        content.appendChild(message);
+    // Create a link with the pre-filled message
+    var whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
 
-        // Clear the input
-        input.value = '';
-    }
+    // Open the link in a new tab or window
+    window.open(whatsappLink, '_blank');
+
+    // Optional: You can also add the message to your chat content
+    var content = document.getElementById('chatContent');
+    var messageDiv = document.createElement('div');
+    messageDiv.textContent = input;
+    messageDiv.style.backgroundColor = '#25d366';
+    messageDiv.style.color = '#fff';
+    messageDiv.style.padding = '10px';
+    messageDiv.style.marginBottom = '10px';
+    messageDiv.style.borderRadius = '5px';
+    content.appendChild(messageDiv);
+
+    // Clear the input
+    document.getElementById('chatInput').value = '';
+}
 
     function toggleFloatingButtons() {
         const floatingButtons = document.querySelector('.floating-buttons');
@@ -727,13 +735,13 @@
     }
 
     function makePhoneCall(event) {
-        event.preventDefault();
-        window.open('tel:+123456789', '_blank');
-    }
+    event.preventDefault();
+    window.open('tel:9849064256', '_blank');
+}
 
     function openGoogleMaps(event) {
         event.preventDefault();
-        window.open('https://www.google.com/maps', '_blank');
+        window.open('https://maps.app.goo.gl/cXWAMEaCTLgKmgaBA', '_blank');
     }
 
     function closeChatbox() {
